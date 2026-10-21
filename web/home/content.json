@@ -1,0 +1,68 @@
+{
+  "paper": {
+    "title_en": "Regulatory Disclosure Sequences and Corporate Distress Risk: Evidence from Korean DART Filings",
+    "journal": "Asia-Pacific Financial Markets",
+    "publisher": "Springer Nature",
+    "manuscript_id": "FEJM-D-26-00495R1",
+    "doi": "10.1007/s10690-026-09651-w",
+    "author": "Yuyong Kim",
+    "affiliation": "University of Wisconsin–Madison",
+    "email": "ykim288@wisc.edu",
+    "sample_period": "2015–2024 공시, 2025년까지 결과 관찰",
+    "split": "2021년까지 학습, 2022년부터 검증",
+    "event_rows": 25705,
+    "event_firms": 2886,
+    "robust_note": "엄격한 정의는 약한 상장 상태 결과 40건과 SPAC 해산 92건, 모두 132건(113개사)을 뺀 것입니다."
+  },
+  "headline_model": { "horizon": 365, "model": "combined_market_calibrated_random_forest" },
+  "non_market_model": { "horizon": 365, "model": "combined_random_forest" },
+  "long_model": { "horizon": 730, "model": "combined_market_calibrated_random_forest" },
+  "hero_case": "디에이테크놀로지",
+  "case_examples": ["세븐브로이맥주", "코스나인", "태영건설"],
+  "explorer_models": [
+    { "model": "sequence_logit", "name": "공시 순서만", "note": "로지스틱 회귀 · 공시 유형별 건수, 간격, 반복" },
+    { "model": "financial_logit", "name": "재무제표만", "note": "로지스틱 회귀 · 자산, 매출, 수익성 등" },
+    { "model": "market_logit", "name": "주가만", "note": "로지스틱 회귀 · 과거 수익률, 거래량, 변동성, 낙폭" },
+    { "model": "combined_random_forest", "name": "공시 순서 + 재무", "note": "랜덤 포레스트" },
+    { "model": "combined_calibrated_random_forest", "name": "공시 순서 + 재무, 확률 보정", "note": "보정 랜덤 포레스트" },
+    { "model": "combined_market_calibrated_random_forest", "name": "공시 순서 + 재무 + 주가", "note": "보정 랜덤 포레스트 · 논문의 최종 모형" }
+  ],
+  "model_names": {
+    "combined_random_forest": "공시 순서 + 재무 랜덤 포레스트"
+  },
+  "outcome_labels": {
+    "BANKRUPTCY_OR_REHABILITATION": "회생·파산",
+    "DEFAULT": "채무불이행",
+    "LISTING_STATUS": "상장 상태",
+    "DISSOLUTION": "해산"
+  },
+  "taxonomy": [
+    { "code": "T01", "name": "회생·해산", "examples": "회생절차 개시, 해산" },
+    { "code": "T02", "name": "상장·매매 상태", "examples": "상장폐지, 매매거래 정지" },
+    { "code": "T03", "name": "채무불이행", "examples": "부도 발생" },
+    { "code": "T05", "name": "자본구조 압박", "examples": "유상증자, 전환사채, 감자, 자산·지분 양수도" },
+    { "code": "T06", "name": "지배구조 변화", "examples": "합병, 분할, 소송" },
+    { "code": "T99", "name": "기타 주요사항", "examples": "나머지 주요사항보고서" }
+  ],
+  "features": [
+    "누적 공시 건수와 90·180·365·730일 안의 건수",
+    "유형별(T01·T02·T03·T05·T06·T99) 건수",
+    "마지막 공시 이후 경과일, 유형별 경과일",
+    "1년 안에 자본구조 공시(T05)가 되풀이되었는지",
+    "반년 안에 자본구조(T05)와 지배구조(T06) 공시가 함께 나왔는지",
+    "채무불이행(T03) 공시 이력"
+  ],
+  "stages": [
+    { "name": "분류", "clause": "먼저, 공시를 여섯 유형으로" },
+    { "name": "순서 변수", "clause": "그다음, 순서를 변수로" },
+    { "name": "시간 분할", "clause": "검증은 시간으로 나눠서" },
+    { "name": "주가 통제", "clause": "끝으로, 주가까지 넣고" }
+  ],
+  "timeline": [
+    { "date": "2026년 7월 11일", "event": "원고 제출", "result": "접수" },
+    { "date": "9월 11일", "event": "1차 심사 결정", "result": "수정 후 게재" },
+    { "date": "9월 13일", "event": "수정본 제출", "result": "FEJM-D-26-00495R1" },
+    { "date": "10월", "event": "최종 게재 수락", "result": "수락" },
+    { "date": "10월 20일", "event": "교정쇄 회신", "result": "출판 준비" }
+  ]
+}

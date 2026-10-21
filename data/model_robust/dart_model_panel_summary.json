@@ -1,0 +1,53 @@
+{
+  "created_from": {
+    "events": "Paper 4\\data\\processed\\events_dart.parquet",
+    "outcomes_raw": "Paper3\\dart_apriori\\data\\raw\\dart_major_reports_full.csv",
+    "financials": "external_phase2_pit_financials"
+  },
+  "method_notes": [
+    "Financial available_date is approximated as report_date + 120 days for annual reports and + 60 days for interim reports.",
+    "Firm-year anchors after a firm's first distress outcome are excluded.",
+    "Outcome labels are observed through outcome_end_year so 2024 anchors can support 365-day targets."
+  ],
+  "anchor_years": [
+    2015,
+    2024
+  ],
+  "outcome_mode": "robust",
+  "outcome_observation_end": "2025-12-31",
+  "rows": 20373,
+  "firms": 2853,
+  "securities": 2853,
+  "outcome_rows": 254,
+  "outcome_firms": 161,
+  "financial_match_rate": 0.8119079173415795,
+  "targets": {
+    "365d": {
+      "usable_rows": 20373,
+      "positive_rows": 126,
+      "positive_rate": 0.006184656162568105
+    },
+    "730d": {
+      "usable_rows": 17633,
+      "positive_rows": 227,
+      "positive_rate": 0.012873589292803267
+    }
+  },
+  "outcome_filter": {
+    "outcome_mode": "robust",
+    "excluded_rows": 132,
+    "excluded_firms": 113,
+    "exclusion_rules": [
+      "Exclude all DELISTING_OR_TRADING_SUSPENSION outcomes because T02 includes weak listing-status proxies such as overseas listing termination notices.",
+      "Exclude DISSOLUTION outcomes for SPAC-like firms whose names contain Korean enterprise-acquisition-purpose terms, Korean SPAC spelling, or SPAC."
+    ],
+    "excluded_by_rule": {
+      "weak_t02_rows": 40,
+      "weak_t02_firms": 21,
+      "spac_dissolution_rows": 92,
+      "spac_dissolution_firms": 92
+    }
+  },
+  "unfiltered_outcome_rows": 386,
+  "unfiltered_outcome_firms": 274
+}

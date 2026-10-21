@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DART disclosure pattern favicon">
+  <rect width="64" height="64" rx="14" fill="#101828"/>
+  <path d="M16 43V17h14c8.8 0 15 5.1 15 13s-6.2 13-15 13H16zm9-8h4.7c4.1 0 6.6-1.9 6.6-5s-2.5-5-6.6-5H25v10z" fill="#f9fafb"/>
+  <circle cx="45" cy="18" r="4" fill="#2dd4bf"/>
+  <circle cx="50" cy="32" r="4" fill="#60a5fa"/>
+  <circle cx="43" cy="46" r="4" fill="#f04438"/>
+  <path d="M45 22l4 6M49 36l-4 6" fill="none" stroke="#f9fafb" stroke-width="3" stroke-linecap="round"/>
+</svg>

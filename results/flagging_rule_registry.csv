@@ -1,0 +1,7 @@
+﻿rule_id,severity,action,pattern,window_days,mode,include_outcome_events,description
+CRITICAL_T01_IMMEDIATE,CRITICAL,IMMEDIATE_REVIEW,T01,1,any_code,True,"Any insolvency, bankruptcy, rehabilitation, or receivership event."
+CRITICAL_T02_IMMEDIATE,CRITICAL,IMMEDIATE_REVIEW,T02,1,any_code,True,Any delisting or trading-status event.
+HIGH_T04_THEN_T03_90D,HIGH,PRIORITY_REVIEW,T04>T03,90,ordered_pair,False,Going-concern/audit concern followed by debt default or acceleration within 90 days.
+HIGH_T05_T06_30D,HIGH,PRIORITY_REVIEW,T05>T06,30,mixed_codes,False,Capital-structure stress and governance/control change occurring within 30 days.
+MEDIUM_T05_THEN_T04_365D,MEDIUM,WATCHLIST,T05>T04,365,ordered_pair,False,Capital-structure stress followed by going-concern/audit concern within 365 days.
+MEDIUM_REPEATED_T05_365D,MEDIUM,WATCHLIST,T05>T05,365,repeat_code,False,At least two capital-structure-stress events within 365 days.

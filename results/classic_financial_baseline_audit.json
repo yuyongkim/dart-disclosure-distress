@@ -1,0 +1,34 @@
+{
+  "altman_z_score_original": {
+    "status": "not_computable_exactly",
+    "available_components": [
+      "EBIT-like operating income / total assets",
+      "book equity / total liabilities",
+      "sales-like revenue / total assets"
+    ],
+    "missing_components": [
+      "working capital / total assets",
+      "retained earnings / total assets",
+      "market value of equity / total liabilities"
+    ],
+    "proxy_used": "altman_partial_available_components"
+  },
+  "ohlson_o_score_original": {
+    "status": "not_computable_exactly",
+    "available_components": [
+      "log total assets",
+      "total liabilities / total assets",
+      "net income / total assets",
+      "negative equity indicator",
+      "two-year loss indicator",
+      "net-income change ratio"
+    ],
+    "missing_components": [
+      "working capital / total assets",
+      "current liabilities / current assets",
+      "funds from operations / total liabilities",
+      "GNP price-level adjustment"
+    ],
+    "proxy_used": "ohlson_partial_available_components"
+  }
+}

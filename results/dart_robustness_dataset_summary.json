@@ -1,0 +1,45 @@
+[
+  {
+    "scenario":"main",
+    "rows":19924,
+    "firms":2798,
+    "outcome_rows":386,
+    "outcome_firms":274,
+    "financial_match_rate":0.8220738807,
+    "target_365_positive_rows":170,
+    "target_730_positive_rows":283,
+    "outcome_filter":{
+      "outcome_mode":"all",
+      "excluded_rows":0,
+      "excluded_firms":0,
+      "exclusion_rules":[
+
+      ]
+    }
+  },
+  {
+    "scenario":"robust",
+    "rows":20373,
+    "firms":2853,
+    "outcome_rows":254,
+    "outcome_firms":161,
+    "financial_match_rate":0.8119079173,
+    "target_365_positive_rows":126,
+    "target_730_positive_rows":227,
+    "outcome_filter":{
+      "outcome_mode":"robust",
+      "excluded_rows":132,
+      "excluded_firms":113,
+      "exclusion_rules":[
+        "Exclude all DELISTING_OR_TRADING_SUSPENSION outcomes because T02 includes weak listing-status proxies such as overseas listing termination notices.",
+        "Exclude DISSOLUTION outcomes for SPAC-like firms whose names contain Korean enterprise-acquisition-purpose terms, Korean SPAC spelling, or SPAC."
+      ],
+      "excluded_by_rule":{
+        "weak_t02_rows":40,
+        "weak_t02_firms":21,
+        "spac_dissolution_rows":92,
+        "spac_dissolution_firms":92
+      }
+    }
+  }
+]

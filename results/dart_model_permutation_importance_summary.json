@@ -1,0 +1,22 @@
+[
+  {
+    "horizon_days": 365,
+    "model": "combined_random_forest",
+    "n_train": 12312,
+    "n_test": 7612,
+    "test_positives": 55,
+    "baseline_roc_auc": 0.8922179315986383,
+    "baseline_average_precision": 0.0710145615617542,
+    "baseline_top_10pct_lift": 6.720209973753281
+  },
+  {
+    "horizon_days": 730,
+    "model": "combined_random_forest",
+    "n_train": 12312,
+    "n_test": 4961,
+    "test_positives": 63,
+    "baseline_roc_auc": 0.8940967158607012,
+    "baseline_average_precision": 0.10216526416472399,
+    "baseline_top_10pct_lift": 6.020823352815304
+  }
+]

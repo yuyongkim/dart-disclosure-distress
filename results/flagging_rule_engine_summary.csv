@@ -1,0 +1,13 @@
+﻿source,rule_id,severity,action,pattern,window_days,include_outcome_events,firms,outcome_firms,flagged_firms,early_true_positive_firms,same_day_or_reactive_firms,false_positive_firms,early_precision,early_recall,median_early_lead_days,mean_early_lead_days,description
+DART,CRITICAL_T01_IMMEDIATE,CRITICAL,IMMEDIATE_REVIEW,T01,1,True,2886,235,207,0,207,0,0.0,0.0,,,"Any insolvency, bankruptcy, rehabilitation, or receivership event."
+DART,CRITICAL_T02_IMMEDIATE,CRITICAL,IMMEDIATE_REVIEW,T02,1,True,2886,235,21,0,21,0,0.0,0.0,,,Any delisting or trading-status event.
+DART,HIGH_T04_THEN_T03_90D,HIGH,PRIORITY_REVIEW,T04>T03,90,False,2886,235,0,0,0,0,0.0,0.0,,,Going-concern/audit concern followed by debt default or acceleration within 90 days.
+DART,HIGH_T05_T06_30D,HIGH,PRIORITY_REVIEW,T05>T06,30,False,2886,235,198,21,0,177,0.10606060606060606,0.08936170212765958,726.0,903.0952380952381,Capital-structure stress and governance/control change occurring within 30 days.
+DART,MEDIUM_REPEATED_T05_365D,MEDIUM,WATCHLIST,T05>T05,365,False,2886,235,1105,98,0,1007,0.08868778280542987,0.41702127659574467,1229.5,1348.6122448979593,At least two capital-structure-stress events within 365 days.
+DART,MEDIUM_T05_THEN_T04_365D,MEDIUM,WATCHLIST,T05>T04,365,False,2886,235,0,0,0,0,0.0,0.0,,,Capital-structure stress followed by going-concern/audit concern within 365 days.
+SEC,CRITICAL_T01_IMMEDIATE,CRITICAL,IMMEDIATE_REVIEW,T01,1,True,95,23,0,0,0,0,0.0,0.0,,,"Any insolvency, bankruptcy, rehabilitation, or receivership event."
+SEC,CRITICAL_T02_IMMEDIATE,CRITICAL,IMMEDIATE_REVIEW,T02,1,True,95,23,20,0,20,0,0.0,0.0,,,Any delisting or trading-status event.
+SEC,HIGH_T04_THEN_T03_90D,HIGH,PRIORITY_REVIEW,T04>T03,90,False,95,23,0,0,0,0,0.0,0.0,,,Going-concern/audit concern followed by debt default or acceleration within 90 days.
+SEC,HIGH_T05_T06_30D,HIGH,PRIORITY_REVIEW,T05>T06,30,False,95,23,65,15,0,50,0.23076923076923078,0.6521739130434783,970.0,1084.8666666666666,Capital-structure stress and governance/control change occurring within 30 days.
+SEC,MEDIUM_REPEATED_T05_365D,MEDIUM,WATCHLIST,T05>T05,365,False,95,23,74,17,0,57,0.22972972972972974,0.7391304347826086,807.0,949.4705882352941,At least two capital-structure-stress events within 365 days.
+SEC,MEDIUM_T05_THEN_T04_365D,MEDIUM,WATCHLIST,T05>T04,365,False,95,23,0,0,0,0,0.0,0.0,,,Capital-structure stress followed by going-concern/audit concern within 365 days.

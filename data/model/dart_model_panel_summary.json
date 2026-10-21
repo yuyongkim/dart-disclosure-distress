@@ -1,0 +1,44 @@
+{
+  "created_from": {
+    "events": "Paper 4\\data\\processed\\events_dart.parquet",
+    "outcomes_raw": "Paper3\\dart_apriori\\data\\raw\\dart_major_reports_full.csv",
+    "financials": "external_phase2_pit_financials"
+  },
+  "method_notes": [
+    "Financial available_date is approximated as report_date + 120 days for annual reports and + 60 days for interim reports.",
+    "Firm-year anchors after a firm's first distress outcome are excluded.",
+    "Outcome labels are observed through outcome_end_year so 2024 anchors can support 365-day targets."
+  ],
+  "anchor_years": [
+    2015,
+    2024
+  ],
+  "outcome_mode": "all",
+  "outcome_observation_end": "2025-12-31",
+  "rows": 19924,
+  "firms": 2798,
+  "securities": 2798,
+  "outcome_rows": 386,
+  "outcome_firms": 274,
+  "financial_match_rate": 0.822073880746838,
+  "targets": {
+    "365d": {
+      "usable_rows": 19924,
+      "positive_rows": 170,
+      "positive_rate": 0.008532423208191127
+    },
+    "730d": {
+      "usable_rows": 17273,
+      "positive_rows": 283,
+      "positive_rate": 0.01638395183233949
+    }
+  },
+  "outcome_filter": {
+    "outcome_mode": "all",
+    "excluded_rows": 0,
+    "excluded_firms": 0,
+    "exclusion_rules": []
+  },
+  "unfiltered_outcome_rows": 386,
+  "unfiltered_outcome_firms": 274
+}

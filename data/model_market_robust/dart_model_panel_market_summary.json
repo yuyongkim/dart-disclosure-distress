@@ -1,0 +1,145 @@
+{
+  "created_from": {
+    "panel": "Paper 4\\data\\model_robust\\dart_model_panel.parquet",
+    "ohlcv_db": "external_ky_platform_ohlcv_db",
+    "supplemental_ohlcv": [
+      "Paper 4\\data\\raw\\market_coverage\\naver_ohlcv_supplement.csv",
+      "Paper 4\\data\\raw\\market_coverage\\fdr_ohlcv_gap_supplement.csv"
+    ],
+    "market_index": "Paper 4\\data\\raw\\market_index\\korea_market_indices.csv"
+  },
+  "max_trade_date": "20241231",
+  "ohlcv_rows_loaded": 5492375,
+  "ohlcv_symbols_loaded": 2784,
+  "base_ohlcv_rows_loaded_before_supplement": 3761557,
+  "supplemental_ohlcv_rows_loaded": 2478834,
+  "supplemental_ohlcv_paths": [
+    "Paper 4\\data\\raw\\market_coverage\\naver_ohlcv_supplement.csv",
+    "Paper 4\\data\\raw\\market_coverage\\fdr_ohlcv_gap_supplement.csv"
+  ],
+  "market_benchmark_source": "kospi_kosdaq_index",
+  "market_benchmark_method": "prior_market_cap_weighted",
+  "market_index_rows_loaded": 5406,
+  "market_index_symbols_loaded": 2,
+  "market_index_min_date": "2014-01-02",
+  "market_index_max_date": "2024-12-30",
+  "market_index_coverage_rate": 0.9990009786294636,
+  "panel_rows": 20373,
+  "panel_firms": 2853,
+  "panel_securities": 2853,
+  "market_feature_columns": [
+    "mkt_has_price_record",
+    "mkt_missing_price_flag",
+    "mkt_stale_30d_flag",
+    "mkt_days_since_last_trade",
+    "mkt_last_close_log",
+    "mkt_obs_20d",
+    "mkt_return_20d",
+    "mkt_market_return_20d",
+    "mkt_excess_return_20d",
+    "mkt_volatility_20d",
+    "mkt_excess_volatility_20d",
+    "mkt_max_drawdown_20d",
+    "mkt_log_volume_mean_20d",
+    "mkt_zero_volume_share_20d",
+    "mkt_abs_return_mean_20d",
+    "mkt_log_return_sum_20d",
+    "mkt_obs_60d",
+    "mkt_return_60d",
+    "mkt_market_return_60d",
+    "mkt_excess_return_60d",
+    "mkt_volatility_60d",
+    "mkt_excess_volatility_60d",
+    "mkt_max_drawdown_60d",
+    "mkt_log_volume_mean_60d",
+    "mkt_zero_volume_share_60d",
+    "mkt_abs_return_mean_60d",
+    "mkt_log_return_sum_60d",
+    "mkt_obs_120d",
+    "mkt_return_120d",
+    "mkt_market_return_120d",
+    "mkt_excess_return_120d",
+    "mkt_volatility_120d",
+    "mkt_excess_volatility_120d",
+    "mkt_max_drawdown_120d",
+    "mkt_log_volume_mean_120d",
+    "mkt_zero_volume_share_120d",
+    "mkt_abs_return_mean_120d",
+    "mkt_log_return_sum_120d",
+    "mkt_obs_252d",
+    "mkt_return_252d",
+    "mkt_market_return_252d",
+    "mkt_excess_return_252d",
+    "mkt_volatility_252d",
+    "mkt_excess_volatility_252d",
+    "mkt_max_drawdown_252d",
+    "mkt_log_volume_mean_252d",
+    "mkt_zero_volume_share_252d",
+    "mkt_abs_return_mean_252d",
+    "mkt_log_return_sum_252d",
+    "mkt_log_volume_ratio_20_120"
+  ],
+  "market_feature_count": 50,
+  "price_record_rate": 0.9700093260688166,
+  "recent_price_record_rate": 0.8813135031659549,
+  "coverage_by_anchor_year": {
+    "2015": {
+      "rows": 973,
+      "price_record_rate": 0.9588900308324769,
+      "recent_price_record_rate": 0.934224049331963
+    },
+    "2016": {
+      "rows": 1396,
+      "price_record_rate": 0.9584527220630372,
+      "recent_price_record_rate": 0.923352435530086
+    },
+    "2017": {
+      "rows": 1679,
+      "price_record_rate": 0.9660512209648601,
+      "recent_price_record_rate": 0.9154258487194759
+    },
+    "2018": {
+      "rows": 1887,
+      "price_record_rate": 0.9666136724960255,
+      "recent_price_record_rate": 0.8876523582405935
+    },
+    "2019": {
+      "rows": 2032,
+      "price_record_rate": 0.969488188976378,
+      "recent_price_record_rate": 0.8848425196850394
+    },
+    "2020": {
+      "rows": 2193,
+      "price_record_rate": 0.9717282261741906,
+      "recent_price_record_rate": 0.8782489740082079
+    },
+    "2021": {
+      "rows": 2366,
+      "price_record_rate": 0.974218089602705,
+      "recent_price_record_rate": 0.8736263736263736
+    },
+    "2022": {
+      "rows": 2489,
+      "price_record_rate": 0.9706709521896344,
+      "recent_price_record_rate": 0.8698272398553636
+    },
+    "2023": {
+      "rows": 2618,
+      "price_record_rate": 0.9736440030557678,
+      "recent_price_record_rate": 0.8621084797555386
+    },
+    "2024": {
+      "rows": 2740,
+      "price_record_rate": 0.9759124087591241,
+      "recent_price_record_rate": 0.8510948905109489
+    }
+  },
+  "method_notes": [
+    "Market features use only the last available OHLCV records on or before each firm-year anchor date.",
+    "Optional supplemental OHLCV CSV rows are concatenated with the base SQLite rows after symbol/date normalization.",
+    "Duplicate symbol-date rows are de-duplicated by keeping supplemental rows after the base DB rows.",
+    "Returns are trailing trading-day returns ending at the last available trade before the anchor.",
+    "Market-adjusted returns use KOSPI/KOSDAQ composite index returns from the collected market-index artifact, weighted by prior-day index market capitalization where available.",
+    "Stale or missing price coverage is retained through explicit missing and stale flags to avoid dropping distressed or suspended firms mechanically."
+  ]
+}

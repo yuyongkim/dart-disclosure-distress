@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>공시 순서와 부실 위험</title>
+  <meta name="description" content="DART 주요사항보고서의 순서로 한국 상장사의 부실 위험을 가려낸 연구. Asia-Pacific Financial Markets 게재 확정." />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="bar">
+    <a class="wordmark" href="./">DART 공시 순서</a>
+    <nav class="links" aria-label="주요 메뉴">
+      <a href="#results">결과</a>
+      <a href="#method">방법</a>
+      <a href="#cases">사례</a>
+      <a href="#paper">논문</a>
+    </nav>
+    <a class="button" href="#cases">사례 찾아보기</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div class="stage">
+        <h1 id="title" class="sentence">
+          <span class="half first">공시의 순서가</span>
+          <span class="reel" aria-hidden="true">
+            <span class="track" id="reelTrack">
+              <span class="frame" data-ui id="frameSequence"></span>
+              <span class="frame"><img src="./figures/paper4_sequence_market_reaction_en.webp" alt="" width="1600" height="690" /></span>
+              <span class="frame" data-ui id="frameScore"></span>
+              <span class="frame"><img src="./figures/paper4_model_performance_en.webp" alt="" width="1600" height="676" /></span>
+            </span>
+          </span>
+          <span class="half second">부실을 먼저 말한다</span>
+        </h1>
+        <p class="support reveal">한국 상장사 <b data-bind="panel_firms">2,798</b>곳의 DART 주요사항보고서를 공시 순서대로 읽어 1년 안의 부실 위험을 가려냈습니다. 논문은 Asia-Pacific Financial Markets 게재가 확정되었습니다.</p>
+      </div>
+    </section>
+
+    <section class="figures" aria-labelledby="figures-title">
+      <h2 id="figures-title" class="sr-only">핵심 결과</h2>
+      <p class="figure-sentence reveal">검증 기간에 1년 안 부실이 난 <b data-bind="pos_365">55</b>곳 가운데 <b data-bind="caught_365">41</b>곳이 모형 점수 상위 10% 안에 있었습니다. 무작위로 같은 수를 고를 때보다 <b data-bind="lift_365">7.45</b>배 많습니다.</p>
+    </section>
+
+    <section id="method" class="method" aria-labelledby="stage-clause">
+      <div class="method-text reveal">
+        <h2 id="stage-clause" class="clause" aria-live="polite">먼저, 공시를 여섯 유형으로</h2>
+        <p class="method-note" id="stageNote"></p>
+      </div>
+      <div class="method-ui reveal">
+        <div class="fragment" id="stageFragment" data-ui></div>
+      </div>
+      <div class="method-control">
+        <label class="sr-only" for="stageRange">단계 선택</label>
+        <div class="range-wrap"><span class="range-base"></span><span class="range-fill" id="rangeFill"></span><input id="stageRange" class="range" type="range" min="0" max="3" step="1" value="0" /></div>
+        <ol class="stage-names" id="stageNames"></ol>
+      </div>
+    </section>
+
+    <section id="results" class="results" aria-labelledby="results-title">
+      <h2 id="results-title" class="section-head reveal">상위 10%만 검토하면<br />부실을 몇 곳 잡는가</h2>
+      <div class="results-body">
+        <figure class="results-figure reveal">
+          <img src="./figures/paper4_permutation_importance_en.webp" alt="1년 예측 모형의 변수 중요도. 마지막 지배구조 공시 이후 경과일, 총자산, 매출이 상위에 있습니다." width="1600" height="851" loading="lazy" />
+          <figcaption>변수 중요도. 공시 순서 변수와 재무 변수가 함께 상위에 있습니다.</figcaption>
+        </figure>
+        <div class="results-table">
+          <div class="views reveal" role="tablist" aria-label="예측 기간과 부실 정의" id="viewTabs"></div>
+          <table class="models" aria-describedby="readout">
+            <caption class="sr-only">모형별 상위 10% 결과</caption>
+            <thead><tr><th scope="col">모형</th><th scope="col" class="num">잡은 곳</th><th scope="col" class="num">리프트</th></tr></thead>
+            <tbody id="modelRows"><tr><td colspan="3">결과 파일을 불러오는 중입니다.</td></tr></tbody>
+          </table>
+          <p class="readout" id="readout" aria-live="polite"></p>
+          <p class="note" id="robustNote"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="cases" aria-labelledby="case-label">
+      <label id="case-label" class="sr-only" for="caseInput">기업 이름</label>
+      <input id="caseInput" class="case-input" type="text" value="디에이테크놀로지" autocomplete="off" spellcheck="false" data-ui />
+      <div class="case-answer" id="caseAnswer" aria-live="polite" data-ui>
+        <p>논문에 실린 부실 사례 8곳의 공시 순서를 불러오는 중입니다.</p>
+      </div>
+      <div class="case-examples reveal" id="caseExamples" aria-label="다른 사례"></div>
+      <p class="case-note reveal">논문 검증 기간에 실제로 부실이 난 기업 사례입니다. 점수는 기준일까지 나온 공시와 재무만으로 계산했고, 기준일 뒤 공시는 결과까지의 경로를 보여 드리려고 함께 적었습니다.</p>
+    </section>
+
+    <section id="paper" class="paper" aria-labelledby="paper-title">
+      <h2 id="paper-title" class="sr-only">논문 정보</h2>
+      <div class="paper-facts reveal">
+        <p><span>저널</span><b data-bind="journal">Asia-Pacific Financial Markets</b></p>
+        <p><span>원고 번호</span><b data-bind="manuscript_id">FEJM-D-26-00495R1</b></p>
+        <p><span>DOI</span><b data-bind="doi">10.1007/s10690-026-09651-w</b></p>
+      </div>
+      <div class="paper-text">
+        <p class="paper-lead reveal"><img class="drop" src="./figures/paper4_framework_en.webp" alt="연구 설계 그림. DART 공시, 재무제표, 주가를 기업-연도 패널로 묶어 시간 분할로 평가합니다." width="1600" height="672" loading="lazy" /><span data-bind="title_en">Regulatory Disclosure Sequences and Corporate Distress Risk: Evidence from Korean DART Filings</span></p>
+        <p class="paper-body reveal">2015년부터 2024년까지 <span data-bind="event_firms">2,886</span>개사가 낸 주요사항보고서 <span data-bind="event_rows">25,705</span>건을 여섯 유형으로 나누고, 기업마다 무엇을 어떤 순서로 공시했는지를 변수로 만들어 재무제표만 쓴 모형, 주가만 쓴 모형과 비교했습니다. 2026년 7월 Asia-Pacific Financial Markets에 투고해 9월 수정 요청을 받았고, 10월 게재가 확정되었습니다.</p>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="close">
+    <div class="close-top reveal">
+      <p><span data-bind="author">Yuyong Kim</span>, <span data-bind="affiliation">University of Wisconsin–Madison</span></p>
+      <p><a href="./paper4/">상세 대시보드</a> · <a href="./paper3/">Paper 3 공시 조합 지도</a> · <a href="https://gazua.yule.pics/">gazua.yule.pics</a></p>
+      <a class="to-top" href="#title">맨 위로</a>
+    </div>
+    <a class="contact reveal" href="mailto:ykim288@wisc.edu"><span>ykim288</span><span>@wisc.edu</span></a>
+    <div class="close-meta reveal">
+      <span>그림은 게재 수락본에서 가져왔습니다.</span>
+      <span>수치는 결과 파일에서 직접 읽습니다.</span>
+      <span>Madison, 2026</span>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
